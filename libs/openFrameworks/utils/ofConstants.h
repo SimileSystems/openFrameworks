@@ -150,8 +150,11 @@ enum ofTargetPlatform{
 #ifdef TARGET_WIN32
 	#define GLEW_STATIC
 	#define GLEW_NO_GLU
-	#include "GL/glew.h"
-    #include "GL/wglew.h"
+/* BEGIN QT */
+  #include <glad/glad.h>
+  //#include "GL/glew.h"
+  //#include "GL/wglew.h"
+/* END QT */
 	#define __WINDOWS_DS__
 	#define __WINDOWS_MM__
 	#if (_MSC_VER)       // microsoft visual studio
@@ -203,8 +206,11 @@ enum ofTargetPlatform{
 		#define __MACOSX_CORE__
 	#endif
 	#include <unistd.h>
-	#include "GL/glew.h"
-	#include <OpenGL/gl.h>
+/* BEGIN QT */
+  #include <glad/glad.h>
+  //#include "GL/glew.h"
+  //#include <OpenGL/gl.h>
+/* END QT */
 	#include <ApplicationServices/ApplicationServices.h>
 
 	#if defined(__LITTLE_ENDIAN__)

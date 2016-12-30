@@ -749,7 +749,11 @@ bool ofGLCheckExtension(string searchName){
 	extensionsSet.insert(extensionsList.begin(),extensionsList.end());
 	return extensionsSet.find(searchName)!=extensionsSet.end();
 #else
-	return glewIsSupported(searchName.c_str());
+  /* BEGIN QT */
+  printf("@todo implement ofGLCheckExtension for QT x GLAD.\n");
+	//return glewIsSupported(searchName.c_str());
+  return false;
+  /* END QT */
 #endif
 }
 
