@@ -29,9 +29,13 @@ EOF
 
 download(){
     echo "Downloading $1"
-    wget ci.openframeworks.cc/libs/$1 $SILENT_ARGS
-}
 
+    if wget --version >/dev/null 2>&1; then
+        wget ci.openframeworks.cc/libs/$1 $SILENT_ARGS
+    elif curl --version >/dev/null 2>&1; then
+        curl -o $1 ci.openframeworks.cc/libs/$1 
+    fi
+}
 # trap any script errors and exit
 trap 'trapError ${LINENO}' ERR
 trap "trapError" SIGINT SIGTERM
