@@ -151,7 +151,9 @@ enum ofTargetPlatform{
 	#define GLEW_STATIC
 	#define GLEW_NO_GLU
 /* BEGIN QT */
-  #include <glad/glad.h>
+    #ifndef __gl_h_
+    #include <glad/glad.h>
+    #endif // !__gl_h_
   //#include "GL/glew.h"
   //#include "GL/wglew.h"
 /* END QT */
@@ -207,7 +209,9 @@ enum ofTargetPlatform{
 	#endif
 	#include <unistd.h>
 /* BEGIN QT */
-  #include <glad/glad.h>
+    #ifndef __gl_h_
+    #include <glad/glad.h>
+    #endif // !__gl_h_
   //#include "GL/glew.h"
   //#include <OpenGL/gl.h>
 /* END QT */
